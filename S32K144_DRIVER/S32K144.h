@@ -40,11 +40,30 @@ typedef struct
 /*===============================================================================*/
 /*			Define PORT			*/ 
 /*===============================================================================*/
+typedef struct 
+{
+  volatile uint32_t PCR[32u];       
+	volatile uint32_t GPCLR;
+	volatile uint32_t GPCHR;
+	volatile uint32_t GICLR;
+	volatile uint32_t GICHR;
+	volatile uint32_t ISFR;
+	volatile uint32_t DFER;
+	volatile uint32_t DFCR;
+	volatile uint32_t DFWR;
+}PORT_typedef;
+
 #define PORTA_address (0x40049000)
 #define PORTB_address (0x4004A000)
 #define PORTC_address (0x4004B000)
 #define PORTD_address (0x4004C000)
 #define PORTE_address (0x4004D000)
+
+#define PORTA	((PORT_typedef *)PORTA_address)
+#define PORTB	((PORT_typedef *)PORTB_address)
+#define PORTC	((PORT_typedef *)PORTC_address)
+#define PORTD	((PORT_typedef *)PORTD_address)
+#define PORTE	((PORT_typedef *)PORTE_address)
 
 /*LED RED, GREEN, BLUE*/
 #define PORTD_PCR0    	*( (volatile uint32_t *)(PORTD_address) )
@@ -121,8 +140,8 @@ typedef struct
 	uint32_t SYST_CVR;
 	uint32_t SYST_CALIB;
 }Systick_typedef;
-#define SYSTICK_BASE_ADDRESS    ((uint32_t)0xE000E010u)
-#define SYSTICK 				((Systick_typedef*)SYSTICK_BASE_ADDRESS)
+#define SYSTICK_BASE_ADDRESS  ((uint32_t)0xE000E010u)
+#define SYSTICK 							((Systick_typedef*)SYSTICK_BASE_ADDRESS)
 /*===============================================================================*/
 
 /*===============================================================================*/

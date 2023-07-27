@@ -371,7 +371,7 @@
             <TextAddressRange>0x00000000</TextAddressRange>
             <DataAddressRange>0x20000000</DataAddressRange>
             <pXoBase></pXoBase>
-            <ScatterFile>C:\Users\DELL\AppData\Local\Arm\Packs\Keil\S32_SDK_DFP\1.5.0\platform\devices\S32K144\linker\armc\S32K144_64_flash.sct</ScatterFile>
+            <ScatterFile>.\RTE\Device\S32K144HAxxxLLx\S32K144_64_flash.sct</ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
             <Misc></Misc>
@@ -462,7 +462,19 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>New Group</GroupName>
+          <GroupName>Softtimer</GroupName>
+          <Files>
+            <File>
+              <FileName>Softtimer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Softtimer.c</FilePath>
+            </File>
+            <File>
+              <FileName>Softtimer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Softtimer.h</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>::CMSIS</GroupName>

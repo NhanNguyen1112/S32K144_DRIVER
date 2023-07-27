@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\S32K144_DRIVER.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\S32K144_DRIVER.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Tue Jul 25 10:00:19 2023
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Thu Jul 27 22:36:53 2023
 <BR><P>
 <H3>Maximum Stack Usage =         32 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -19,7 +19,6 @@ Mutually Recursive functions
  <LI><a href="#[6]">SVC_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[6]">SVC_Handler</a><BR>
  <LI><a href="#[7]">DebugMon_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[7]">DebugMon_Handler</a><BR>
  <LI><a href="#[8]">PendSV_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[8]">PendSV_Handler</a><BR>
- <LI><a href="#[9]">SysTick_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[9]">SysTick_Handler</a><BR>
  <LI><a href="#[85]">DefaultISR</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[85]">DefaultISR</a><BR>
  <LI><a href="#[31]">ADC0_IRQHandler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[31]">ADC0_IRQHandler</a><BR>
 </UL>
@@ -158,7 +157,7 @@ Function Pointers
  <LI><a href="#[43]">SCG_IRQHandler</a> from startup_s32k144.o(.text) referenced from startup_s32k144.o(RESET)
  <LI><a href="#[6]">SVC_Handler</a> from startup_s32k144.o(.text) referenced from startup_s32k144.o(RESET)
  <LI><a href="#[4a]">SWI_IRQHandler</a> from startup_s32k144.o(.text) referenced from startup_s32k144.o(RESET)
- <LI><a href="#[9]">SysTick_Handler</a> from startup_s32k144.o(.text) referenced from startup_s32k144.o(RESET)
+ <LI><a href="#[9]">SysTick_Handler</a> from softtimer.o(.text.SysTick_Handler) referenced from startup_s32k144.o(RESET)
  <LI><a href="#[86]">SystemInit</a> from system_s32k144.o(.text.SystemInit) referenced from startup_s32k144.o(.text)
  <LI><a href="#[5]">UsageFault_Handler</a> from startup_s32k144.o(.text) referenced from startup_s32k144.o(RESET)
  <LI><a href="#[20]">WDOG_EWM_IRQHandler</a> from startup_s32k144.o(.text) referenced from startup_s32k144.o(RESET)
@@ -352,13 +351,6 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PendSV_Handler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PendSV_Handler
-</UL>
-<BR>[Address Reference Count : 1]<UL><LI> startup_s32k144.o(RESET)
-</UL>
-<P><STRONG><a name="[9]"></a>SysTick_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup_s32k144.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
-</UL>
-<BR>[Called By]<UL><LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_s32k144.o(RESET)
 </UL>
@@ -800,6 +792,9 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
+<P><STRONG><a name="[9]"></a>SysTick_Handler</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, softtimer.o(.text.SysTick_Handler))
+<BR>[Address Reference Count : 1]<UL><LI> startup_s32k144.o(RESET)
+</UL>
 <P><STRONG><a name="[86]"></a>SystemInit</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, system_s32k144.o(.text.SystemInit))
 <BR>[Address Reference Count : 1]<UL><LI> startup_s32k144.o(.text)
 </UL>
