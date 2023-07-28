@@ -9,7 +9,7 @@
 
 typedef unsigned char 	uint8_t;
 typedef unsigned short 	uint16_t;
-typedef unsigned long 	uint32_t;
+typedef unsigned int 	uint32_t;
 
 #define SETBIT(PORT,VALUE,BIT) 		( (PORT) |= ( (VALUE)<<(BIT) ) )
 #define CLEARBIT(PORT,VALUE,BIT) 	( (PORT) &= ~( (VALUE)<<(BIT) ) )
@@ -17,6 +17,89 @@ typedef unsigned long 	uint32_t;
 #define CLEARALL(PORT) 				( (PORT)&=(0x00000000) )
 #define READBIT(PORT,BIT) 			( (PORT) & (1<<(BIT)) )
 
+/*==================================================================================================
+*                                        ENUMS
+==================================================================================================*/
+typedef enum 
+{
+	LOW,
+	HIGH
+}DigitalState_enum;
+
+typedef enum
+{
+	Disable,
+	Enable
+}EnDisable_enum;
+
+typedef enum 
+{
+	OUTPUT,
+	INPUT
+}PinMode_enum;
+
+typedef enum 
+{
+	No,
+	PullUp,
+	PullDown
+}UpDown_enum;
+
+typedef enum 
+{
+	PortA,
+	PortB,
+	PortC,
+	PortD,
+	PortE
+}Port_enum;
+
+typedef enum 
+{
+	GpioA,
+	GpioB,
+	GpioC,
+	GpioD,
+	GpioE
+}Gpio_enum;
+
+typedef enum
+{
+	PIN0,
+	PIN1,
+	PIN2,
+	PIN3,
+	PIN4,
+	PIN5,
+	PIN6,
+	PIN7,
+	PIN8,
+	PIN9,
+	PIN10,
+	PIN11,
+	PIN12,
+	PIN13,
+	PIN14,
+	PIN15,
+	PIN16,
+	PIN17,
+	PIN18,
+	PIN19,
+	PIN20,
+	PIN21,
+	PIN22,
+	PIN23,
+	PIN24,
+	PIN25,
+	PIN26,
+	PIN27,
+	PIN28,
+	PIN29,
+	PIN30,
+	PIN31
+}PortPin_enum;
+
+/*================================================================================================*/
 
 /*===============================================================================*/
 /*			Define PCC (Clock)			*/ 

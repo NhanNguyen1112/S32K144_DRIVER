@@ -477,6 +477,36 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Clock</GroupName>
+          <Files>
+            <File>
+              <FileName>Clock.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Clock.c</FilePath>
+            </File>
+            <File>
+              <FileName>Clock.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Clock.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Gpio</GroupName>
+          <Files>
+            <File>
+              <FileName>Gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>Gpio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Gpio.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
         <Group>

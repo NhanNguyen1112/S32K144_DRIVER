@@ -5,6 +5,8 @@
 ".\objects\s32k144_interrupt.o"
 ".\objects\systick.o"
 ".\objects\softtimer.o"
+".\objects\clock.o"
+".\objects\gpio.o"
 ".\objects\startup.o"
 ".\objects\startup_s32k144.o"
 ".\objects\system_s32k144.o"

@@ -22,24 +22,24 @@ Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 D:\CODE\FPT_EMB\EMB\S32K144_DRIVER\S32K144_DRIVER\S32K144_DRIVER.uvprojx
-Project File Date:  07/27/2023
+Project File Date:  07/28/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
 compiling main.c...
+compiling Clock.c...
 compiling S32K144_LED.c...
 compiling SYSTICK.c...
 compiling S32K144_INTERRUPT.c...
 compiling S32K144_BUTTON.c...
+compiling Gpio.c...
 Softtimer.c(2): warning: In file included from...
 ./Softtimer.h(21): warning: padding struct 'struct Softtimer' with 3 bytes to align 'TimeoutValue' [-Wpadded]
   unsigned int TimeoutValue;
                ^
 1 warning generated.
 compiling Softtimer.c...
-compiling startup.c...
-compiling system_S32K144.c...
 linking...
 Program Size: Code=1360 RO-data=596 RW-data=0 ZI-data=3080  
 ".\Objects\S32K144_DRIVER.axf" - 0 Error(s), 1 Warning(s).
@@ -71,10 +71,10 @@ Package Vendor: Keil
 
    * Component: Keil::Device:Startup:2.0.0
       Source file:   platform/devices/startup.c
-      Include file:  platform/devices/S32K144/startup/system_S32K144.h
       Source file:   platform/devices/S32K144/startup/system_S32K144.c
-      Include file:  platform/devices/device_registers.h
+      Include file:  platform/devices/S32K144/startup/system_S32K144.h
       Source file:   platform/devices/S32K144/startup/armc/startup_S32K144.S
+      Include file:  platform/devices/device_registers.h
 Build Time Elapsed:  00:00:01
 </pre>
 </body>
