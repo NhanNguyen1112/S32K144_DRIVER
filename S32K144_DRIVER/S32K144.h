@@ -6,6 +6,9 @@
 #include "S32K144_BUTTON.h"
 #include "S32K144_INTERRUPT.h"
 #include "SYSTICK.h"
+#include "Gpio.h"
+#include "Clock.h"
+#include "Softtimer.h"
 
 typedef unsigned char 	uint8_t;
 typedef unsigned short 	uint16_t;
@@ -102,6 +105,77 @@ typedef enum
 /*================================================================================================*/
 
 /*===============================================================================*/
+/*			Define SIM			*/ 
+/*===============================================================================*/
+
+typedef struct
+{
+	char dummy[0x4u];
+	volatile uint32_t CHIPCTL;
+	char dummy1[0x8u];
+	volatile uint32_t FTMOPT0;
+	volatile uint32_t LPOCLKS;
+	char dummy2[0x8u];
+	volatile uint32_t ADCOPT;
+	volatile uint32_t FTMOPT1;
+	volatile uint32_t MISCTRL0;
+	volatile uint32_t SDID;
+	char dummy3[0x1Cu];
+	volatile uint32_t PLATCGC;
+	char dummy4[0xCu];
+	volatile uint32_t FCFG1;
+	char dummy5[0x8u];
+	volatile uint32_t UIDH;
+	volatile uint32_t UIDMH;
+	volatile uint32_t UIDML;
+	volatile uint32_t UIDL;
+	char dummy6[0x8u];
+	volatile uint32_t CLKDIV4;
+	volatile uint32_t MISCTRL1;
+}SIM_typedef;
+
+#define SIM_BASE_ADDRESS (0x40048000u)
+#define SIM ((volatile SIM_typedef *)SIM_BASE_ADDRESS)
+
+/*===============================================================================*/
+
+
+/*===============================================================================*/
+/*			Define SCG (Clock)			*/ 
+/*===============================================================================*/
+typedef struct
+{
+	volatile uint32_t VERID;
+	volatile uint32_t PARAM;
+	volatile uint32_t CSR;
+	volatile uint32_t RCCR;
+	volatile uint32_t VCCR;
+	volatile uint32_t HCCR;
+	volatile uint32_t CLKOUTCNFG;
+	volatile uint32_t SOSCCSR;
+	volatile uint32_t SOSCDIV;
+	volatile uint32_t SOSCCFG;
+	
+	volatile uint32_t SIRCCSR;
+	volatile uint32_t SIRCDIV;
+	volatile uint32_t SIRCCFG;
+
+	volatile uint32_t FIRCCSR;
+	volatile uint32_t FIRCDIV;
+	volatile uint32_t FIRCCFG;
+
+	volatile uint32_t SPLLCSR;
+	volatile uint32_t SPLLDIV;
+	volatile uint32_t SPLLCFG;
+}SCG_typedef;
+
+#define SCG_BASE_ADDRESS (0x40064000u)
+#define SCG ((volatile SCG_typedef *)SCG_BASE_ADDRESS)
+
+/*===============================================================================*/
+
+
+/*===============================================================================*/
 /*			Define PCC (Clock)			*/ 
 /*===============================================================================*/
 
@@ -125,7 +199,7 @@ typedef struct
 /*===============================================================================*/
 typedef struct 
 {
-  volatile uint32_t PCR[32u];       
+	volatile uint32_t PCR[32u];       
 	volatile uint32_t GPCLR;
 	volatile uint32_t GPCHR;
 	volatile uint32_t GICLR;

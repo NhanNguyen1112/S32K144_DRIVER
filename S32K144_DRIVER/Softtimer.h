@@ -23,10 +23,6 @@ typedef struct Softtimer
   CALLBACK Callback;
 } Softtimer;
 
-void Function_PC13(void);
-void Function_PB5(void);
-void Function_PB6(void);
-
 void Softtimer_Init(void);
 void Softtimer_StartTimer(unsigned int TimerID,unsigned int TimeoutValue,unsigned char Mode,CALLBACK callback);
 void Softtimer_StopTimer(unsigned int TimerID);

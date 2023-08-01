@@ -5,26 +5,11 @@ static volatile unsigned int TimeCountMs;
 
 static Softtimer TIMER[Total_Timer];
 
-void Function_PC13(void)
-{
-  //Toggle_Pin(&GPIO_C->GPIO_ODR,PIN13);
-}
-
-void Function_PB5(void)
-{
-  //Toggle_Pin(&GPIO_B->GPIO_ODR,PIN5);
-}
-
-void Function_PB6(void)
-{
-  //Toggle_Pin(&GPIO_B->GPIO_ODR,PIN6);
-}
-
 void Softtimer_Init(void)
 {
   TimeCountMs = 0;
 
-  SYSTICK->SYST_RVR = (uint32_t)(7200000u); /* Set reload value */
+  SYSTICK->SYST_RVR = (uint32_t)(4800000u); /* Set reload value 100ms*/
 
   SYSTICK->SYST_CVR = (uint32_t)(0u); /* Clear current value */
 
