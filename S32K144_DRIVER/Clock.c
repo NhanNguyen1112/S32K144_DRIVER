@@ -1,25 +1,53 @@
 
 #include "Clock.h"
 
-void Fast_IRC_Clock(void)
+void SOSC_Init(void)
 {
-	//unsigned int TempRegister=0u;
+	unsigned int TempDIV=0;
+	unsigned int TempCFG=0;
+	unsigned int TempCSR=0;
+
+	TempDIV |= (1u<<0); /* DIV1 /1 */
+	TempDIV |= (1u<<8); /* DIV2 /1 */
+	SCG->SOSCDIV=TempDIV;
+
+	TempCFG |= (2u<<4); 	/* RANGE set Medium */
+	TempCFG &= ~(1u<<3); 	/* HGO set low power */
+	TempCFG |= (1u<<2); 	/* EREFS set XTAL */
+	SCG->SOSCCFG=TempCFG;
+
+	SCG->SOSCCSR=TempCSR;
+	while( SCG->SOSCCSR & (1u<<23) ) 	/* unlock SOSCCSR */
+	TempCSR |= (1u<<0); 							/* Enable OSC */
+	SCG->SOSCCSR=TempCSR;
+
+	while( !(SCG->SOSCCSR & (1u<<24)) ); /* Wait for sys OSC clk valid */
+
 }
 
-void Slow_IRC_Clock(void)
+void SPLL_Init(void)
 {
-	unsigned int SIRCCSR=0u;
-	unsigned int SIRCCFG=0u;
+	unsigned int TempDIV=0;
+	unsigned int TempCFG=0;
+	unsigned int TempCSR=0;
 
-	SIRCCSR &= ~(1u<<0); /* Disable SLOW IRC */
+	SCG->SPLLCSR = TempCSR; 				/* Disable SPLL & unlocked register */
+	while(SCG->SPLLCSR & (1u<<23)); /* SPLLCSR unlocked */
 
-	SIRCCFG |= (1u<<0); /* Set SIRC 8Mhz */
-	SCG->SIRCCFG = SIRCCFG;
+	TempDIV |= (2u<<0); /* DIV1 /2 */
+	TempDIV |= (2u<<8); /* DIV2 /2 */
+	SCG->SPLLDIV = TempDIV;
 
-	SIRCCSR |= (1u<<0); /* Enable SLOW IRC */
-	SCG->SIRCCSR = SIRCCSR;
-	
-	while( !(SCG->SIRCCSR & (1u<<24)) ); /* Wait Enable SIRC clock */
+	TempCFG &= ~(1u<<0); /* Clock source OSC */
+	TempCFG &= ~(0xFu<<8); /* FREDIV=0 */
+	TempCFG |= (16u<<16); /* MULT=24 */
+	SCG->SPLLCFG = TempCFG;
+
+	while(SCG->SPLLCSR & (1u<<23)); /* SPLLCSR unlocked */
+	TempCSR |= (1u<<0); /* enable SPLL */
+	SCG->SPLLCSR = TempCSR;
+
+	while(!(SCG->SPLLCSR & (1u<<24))); /* Wait for SPLL valid */
 }
 
 void Run_Mode_Clock(void)

@@ -4,8 +4,8 @@
 
 #include "S32K144.h"
 
-void Fast_IRC_Clock(void);
-void Slow_IRC_Clock(void);
+void SOSC_Init(void);
+void SPLL_Init(void);
 void Run_Mode_Clock(void);
 void CheckClock(void);
 void EnableClockPortA(const unsigned char Status);

@@ -222,14 +222,6 @@ typedef struct
 #define PORTD	((PORT_typedef *)PORTD_address)
 #define PORTE	((PORT_typedef *)PORTE_address)
 
-/*LED RED, GREEN, BLUE*/
-#define PORTD_PCR0    	*( (volatile uint32_t *)(PORTD_address) )
-#define PORTD_PCR15    	*( (volatile uint32_t *)((PORTD_address)+(0x3Cu)) )
-#define PORTD_PCR16    	*( (volatile uint32_t *)((PORTD_address)+(0x40u)) )
-
-/*BUTTON 1, 2*/
-#define PORTC_PCR12  *( (volatile uint32_t *)((PORTC_address)+(0x30u)) )
-#define PORTC_PCR13  *( (volatile uint32_t *)((PORTC_address)+(0x34u)) )
 /*===============================================================================*/
 
 
@@ -265,7 +257,8 @@ typedef struct
 /*===============================================================================*/
 
 /** S32_NVIC - Register Layout Typedef */
-typedef struct {
+typedef struct 
+	{
   volatile unsigned int ISER[8u];        
 	unsigned int RESERVED_0[24];
   volatile unsigned int ICER[8u];         
