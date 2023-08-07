@@ -4,7 +4,7 @@
 
 #include "S32K144.h"
 
-void SOSC_Init(void);
+void SOSC_Init_8Mhz(void);
 void SPLL_Init(void);
 void Run_Mode_Clock(void);
 void CheckClock(void);

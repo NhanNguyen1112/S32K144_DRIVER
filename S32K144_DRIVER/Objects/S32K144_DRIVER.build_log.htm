@@ -5,7 +5,7 @@
 <h2>Tool Versions:</h2>
 IDE-Version: µVision V5.38.0.0
 Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: nhan trong, vucom, LIC=YA39H-WVJR4-UH58H-W2ITH-QY6S7-GQVRY
+License Information: vu nghf, vugh, LIC=SDA0P-MMDV3-453T5-GY4RB-ZPP1Q-QKZ0Z
  
 Tool Versions:
 Toolchain:       MDK-ARM Plus  Version: 5.38.0.0
@@ -21,16 +21,31 @@ Target DLL:      PEMicro\Pemicro_ArmCortexInterface.dll V1.3.0.0
 Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
-D:\CODE\EMB\S32K144_DRIVER\S32K144_DRIVER.uvprojx
-Project File Date:  07/28/2023
+D:\CODE\FPT_EMB\EMB\S32K144_DRIVER\S32K144_DRIVER\S32K144_DRIVER.uvprojx
+Project File Date:  08/07/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-compiling Clock.c...
+LPIT.c(2): warning: In file included from...
+./LPIT.h(5): warning: In file included from...
+./S32K144.h(12): warning: In file included from...
+./NVIC.h(6): warning: In file included from...
+./NVIC_Register.h(26): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+LPIT.c(4): warning: no previous prototype for function 'Init' [-Wmissing-prototypes]
+void Init(void)
+     ^
+LPIT.c(4): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void Init(void)
+^
+static 
+2 warnings generated.
+compiling LPIT.c...
 linking...
 Program Size: Code=1228 RO-data=596 RW-data=0 ZI-data=3080  
-".\Objects\S32K144_DRIVER.axf" - 0 Error(s), 0 Warning(s).
+".\Objects\S32K144_DRIVER.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -49,9 +64,9 @@ Package Vendor: Keil
 <h2>Collection of Component include folders:</h2>
   ./RTE/Device/S32K144HAxxxLLx
   ./RTE/_Target_1
-  C:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
-  C:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices
-  C:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices/common
+  C:/Users/PC/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/PC/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices
+  C:/Users/PC/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices/common
 
 <h2>Collection of Component Files used:</h2>
 
@@ -59,10 +74,10 @@ Package Vendor: Keil
 
    * Component: Keil::Device:Startup:2.0.0
       Source file:   platform/devices/startup.c
-      Include file:  platform/devices/S32K144/startup/system_S32K144.h
-      Include file:  platform/devices/device_registers.h
-      Source file:   platform/devices/S32K144/startup/armc/startup_S32K144.S
       Source file:   platform/devices/S32K144/startup/system_S32K144.c
+      Source file:   platform/devices/S32K144/startup/armc/startup_S32K144.S
+      Include file:  platform/devices/device_registers.h
+      Include file:  platform/devices/S32K144/startup/system_S32K144.h
 Build Time Elapsed:  00:00:00
 </pre>
 </body>

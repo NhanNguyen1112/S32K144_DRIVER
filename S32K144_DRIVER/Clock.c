@@ -1,7 +1,7 @@
 
 #include "Clock.h"
 
-void SOSC_Init(void)
+void SOSC_Init_8Mhz(void)
 {
 	unsigned int TempDIV=0;
 	unsigned int TempCFG=0;
@@ -23,7 +23,8 @@ void SOSC_Init(void)
 
 }
 
-void SPLL_Init(void) //160mhz
+/* SPLL_CLK=100Mhz , SPLLDIV1 /2, SPLLDIV2 /2 */
+void SPLL_Init(void)
 {
 	unsigned int TempDIV=0;
 	unsigned int TempCFG=0;
@@ -37,9 +38,9 @@ void SPLL_Init(void) //160mhz
 	SCG->SPLLDIV = TempDIV;
 
 	/* SPLLL CLK = CLK_SOURCE/(PREDIV + 1) * (MULT) */
-	TempCFG &= ~(1u<<0); 	/* Clock source OSC */
+	TempCFG &= ~(1u<<0); 		/* Clock source OSC */
 	TempCFG &= ~(0xFu<<8); 	/* FREDIV=0 */
-	TempCFG |= (14u<<16); 	/* MULT=24 */
+	TempCFG |= (9u<<16); 		/* MULT=25 */
 	SCG->SPLLCFG = TempCFG;
 
 	while(SCG->SPLLCSR & (1u<<23)); /* SPLLCSR unlocked */
@@ -49,14 +50,15 @@ void SPLL_Init(void) //160mhz
 	while(!(SCG->SPLLCSR & (1u<<24))); /* Wait for SPLL valid */
 }
 
+/* Set SPLL, DIVCORE /2, DIVBUS /2, DIVSLOW /2 */
 void Run_Mode_Clock(void)
 {
 	unsigned int TempRCCR=0;
 
 	TempRCCR |= (6u<<24); 	/* SCS Set SPLL */
 	TempRCCR |= (1u<<16); 	/* DIVCORE /2 */
-	TempRCCR |= (1u<<4); 	/* DIVBUS /2 */
-	TempRCCR |= (1u<<0); 	/* DIVSLOW /2 */
+	TempRCCR |= (1u<<4); 		/* DIVBUS /2 */
+	TempRCCR |= (1u<<0); 		/* DIVSLOW /2 */
 
 	SCG->RCCR = TempRCCR;
 

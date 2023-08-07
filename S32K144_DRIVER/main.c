@@ -17,7 +17,7 @@ void Function_LedBlue(void)
 
 int main(void)
 {
-	SOSC_Init();
+	SOSC_Init_8Mhz();
 	SPLL_Init();
 	Run_Mode_Clock();
 	

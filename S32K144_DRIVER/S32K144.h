@@ -9,6 +9,7 @@
 #include "Gpio.h"
 #include "Clock.h"
 #include "Softtimer.h"
+#include "NVIC.h"
 
 typedef unsigned char 	uint8_t;
 typedef unsigned short 	uint16_t;
@@ -259,76 +260,19 @@ typedef struct
 /*===============================================================================*/
 
 /*===============================================================================*/
-/*			Define NVIC			*/ 
-/*===============================================================================*/
-
-/** S32_NVIC - Register Layout Typedef */
-typedef struct 
-	{
-  volatile unsigned int ISER[8u];        
-	unsigned int RESERVED_0[24];
-  volatile unsigned int ICER[8u];         
-    unsigned int RESERVED_1[24];
-  volatile unsigned int ISPR[8u];         
-    unsigned int RESERVED_2[24];
-  volatile unsigned int ICPR[8u];         
-    unsigned int RESERVED_3[24];
-  volatile unsigned int IABR[8u];         
-    unsigned char RESERVED_4[224];
-  volatile unsigned char IP[240u];              
-    unsigned char RESERVED_5[2576];
-  volatile  unsigned int STIR;                              
-} NVIC_Type;
-
-#define NVIC_BASE	(0xE000E100u)
-#define NVIC		((NVIC_Type *)NVIC_BASE)
-
-/*===============================================================================*/
-
-
-/*===============================================================================*/
 /*			Define SYSTICK			*/ 
 /*===============================================================================*/
 typedef struct
 {
-	uint32_t SYST_CSR;
-	uint32_t SYST_RVR;
-	uint32_t SYST_CVR;
-	uint32_t SYST_CALIB;
+	volatile unsigned int SYST_CSR;
+	volatile unsigned int SYST_RVR;
+	volatile unsigned int SYST_CVR;
+	volatile unsigned int SYST_CALIB;
 }Systick_typedef;
 #define SYSTICK_BASE_ADDRESS  ((uint32_t)0xE000E010u)
 #define SYSTICK 							((Systick_typedef*)SYSTICK_BASE_ADDRESS)
 /*===============================================================================*/
 
-/*===============================================================================*/
-/*			Define LPIT			*/ 
-/*===============================================================================*/
 
-typedef struct
-{
-	uint32_t VERID;
-	uint32_t PARAM;
-	uint32_t MCR;
-	uint32_t MSR;
-	uint32_t MIER;
-	uint32_t SETTEN;
-	uint32_t CLRTEN;
-	uint32_t TVAL0;
-	uint32_t CVAL0;
-	uint32_t TCTRL0;
-	uint32_t TVAL1;
-	uint32_t CVAL1;
-	uint32_t TCTRL1;
-	uint32_t TVAL2;
-	uint32_t CVAL2;
-	uint32_t TCTRL2;
-	uint32_t TVAL3;
-	uint32_t CVAL3;
-	uint32_t TCTRL3;
-}LPIT_typdef;
-#define LPIT_BASE_ADDRESS 	((uint32_t)0x40037000u)
-#define LPIT				((LPIT_typdef*)SYSTICK_BASE_ADDRESS)
-
-/*===============================================================================*/
 
 #endif

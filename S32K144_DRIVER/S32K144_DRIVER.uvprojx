@@ -507,6 +507,46 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>NVIC</GroupName>
+          <Files>
+            <File>
+              <FileName>NVIC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\NVIC.c</FilePath>
+            </File>
+            <File>
+              <FileName>NVIC.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\NVIC.h</FilePath>
+            </File>
+            <File>
+              <FileName>NVIC_Register.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\NVIC_Register.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>LPIT</GroupName>
+          <Files>
+            <File>
+              <FileName>LPIT.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\LPIT.c</FilePath>
+            </File>
+            <File>
+              <FileName>LPIT.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\LPIT.h</FilePath>
+            </File>
+            <File>
+              <FileName>LPIT_Register.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\LPIT_Register.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
         <Group>
