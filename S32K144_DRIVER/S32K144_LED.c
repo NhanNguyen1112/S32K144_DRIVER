@@ -28,14 +28,14 @@ void LED_INIT(void)
 	CLOCK_PORTD_INIT();
 	
 	/* Set MUX */
-	PORTD_PCR0 |= (0x01u<<8); /*BLUE*/
-	PORTD_PCR15 |= (0x01u<<8); /*RED*/
-	PORTD_PCR16 |= (0x01u<<8); /*GREEN*/
+	PORTD->PCR[LEDBLUE] 	|= (0x01u<<8); /*BLUE*/
+	PORTD->PCR[LEDRED] 		|= (0x01u<<8); /*RED*/
+	PORTD->PCR[LEDGREEN] 	|= (0x01u<<8); /*GREEN*/
 	
 	/* Clear PULL */
-	PORTD_PCR0 &= ~(1u<<1); /*BLUE*/
-	PORTD_PCR15 &= ~(1u<<1); /*RED*/
-	PORTD_PCR16 &= ~(1u<<1); /*GREEN*/
+	PORTD->PCR[LEDBLUE]  &= ~(1u<<1); /*BLUE*/
+	PORTD->PCR[LEDRED] 	 &= ~(1u<<1); /*RED*/
+	PORTD->PCR[LEDGREEN] &= ~(1u<<1); /*GREEN*/
 	
 	/* SET GPIO OUTPUT */
 	SETBIT(GPIOD->PDDR,1,LEDRED);

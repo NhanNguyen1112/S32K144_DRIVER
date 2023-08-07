@@ -6,7 +6,7 @@ void SOSC_Init(void)
 	unsigned int TempDIV=0;
 	unsigned int TempCFG=0;
 	unsigned int TempCSR=0;
-
+	
 	TempDIV |= (1u<<0); /* DIV1 /1 */
 	TempDIV |= (1u<<8); /* DIV2 /1 */
 	SCG->SOSCDIV=TempDIV;
@@ -16,8 +16,6 @@ void SOSC_Init(void)
 	TempCFG |= (1u<<2); 	/* EREFS set XTAL */
 	SCG->SOSCCFG=TempCFG;
 
-	SCG->SOSCCSR=TempCSR;
-	while( SCG->SOSCCSR & (1u<<23) ) 	/* unlock SOSCCSR */
 	TempCSR |= (1u<<0); 							/* Enable OSC */
 	SCG->SOSCCSR=TempCSR;
 
@@ -25,22 +23,23 @@ void SOSC_Init(void)
 
 }
 
-void SPLL_Init(void)
+void SPLL_Init(void) //160mhz
 {
 	unsigned int TempDIV=0;
 	unsigned int TempCFG=0;
 	unsigned int TempCSR=0;
 
-	SCG->SPLLCSR = TempCSR; 				/* Disable SPLL & unlocked register */
+	SCG->SPLLCSR = TempCSR; 		/* Disable SPLL & unlocked register */
 	while(SCG->SPLLCSR & (1u<<23)); /* SPLLCSR unlocked */
 
 	TempDIV |= (2u<<0); /* DIV1 /2 */
 	TempDIV |= (2u<<8); /* DIV2 /2 */
 	SCG->SPLLDIV = TempDIV;
 
-	TempCFG &= ~(1u<<0); /* Clock source OSC */
-	TempCFG &= ~(0xFu<<8); /* FREDIV=0 */
-	TempCFG |= (16u<<16); /* MULT=24 */
+	/* SPLLL CLK = CLK_SOURCE/(PREDIV + 1) * (MULT) */
+	TempCFG &= ~(1u<<0); 	/* Clock source OSC */
+	TempCFG &= ~(0xFu<<8); 	/* FREDIV=0 */
+	TempCFG |= (14u<<16); 	/* MULT=24 */
 	SCG->SPLLCFG = TempCFG;
 
 	while(SCG->SPLLCSR & (1u<<23)); /* SPLLCSR unlocked */
@@ -52,13 +51,16 @@ void SPLL_Init(void)
 
 void Run_Mode_Clock(void)
 {
-	unsigned int RCCR=0u;
+	unsigned int TempRCCR=0;
 
-	RCCR |= (2u<<24); /* SCS Set Slow IRC */
+	TempRCCR |= (6u<<24); 	/* SCS Set SPLL */
+	TempRCCR |= (1u<<16); 	/* DIVCORE /2 */
+	TempRCCR |= (1u<<4); 	/* DIVBUS /2 */
+	TempRCCR |= (1u<<0); 	/* DIVSLOW /2 */
 
-	SCG->RCCR = RCCR;
+	SCG->RCCR = TempRCCR;
 
-	while( (SCG->CSR & (1<<24)) != 1u  );
+	while( (SCG->CSR>>24) != 6u  ); /* Wait SCS set clock */
 }
 
 void CheckClock(void)
@@ -75,12 +77,13 @@ void CheckClock(void)
   
   SIM->CHIPCTL &= ~(1u<<11);     /* Disable CLKOUT */
 	
-	SIM->CHIPCTL &= ~(0xFu<<4);  /* CLKOUTSEL SET SCG CLKOUT */
-	//SIM->CHIPCTL |= (2u<<4);   /* CLKOUTSEL SET SOSC DIV2 */
-	//SIM->CHIPCTL |= (4u<<4);   /* CLKOUTSEL SET SIRC DIV2 */
-	//SIM->CHIPCTL |= (6u<<4);   /* CLKOUTSEL SET FIRC DIV2 */
-	SIM->CHIPCTL |= (7u<<4);   /* CLKOUTSEL SET HCLK */
-	//SIM->CHIPCTL |= (9u<<4);   /* CLKOUTSEL SET BUS CLK */
+	SIM->CHIPCTL &= ~(0xFu<<4);  	/* CLKOUTSEL SET SCG CLKOUT */
+	SIM->CHIPCTL |= (2u<<4);   		/* CLKOUTSEL SET SOSC DIV2 */
+	//SIM->CHIPCTL |= (4u<<4);   	/* CLKOUTSEL SET SIRC DIV2 */
+	//SIM->CHIPCTL |= (6u<<4);   	/* CLKOUTSEL SET FIRC DIV2 */
+	//SIM->CHIPCTL |= (7u<<4);   	/* CLKOUTSEL SET HCLK */
+	//SIM->CHIPCTL |= (9u<<4);   	/* CLKOUTSEL SET BUS CLK */
+	//SIM->CHIPCTL |= (8u<<4);   	/* CLKOUTSEL SET SPLLDIV/2 */
   
 	SIM->CHIPCTL &= ~(0x7u<<8); 	/* CLKOUTDIV Set /1 */
 	//SIM->CHIPCTL |= (1u<<8);   	/* CLKOUTDIV /2 */
@@ -88,6 +91,8 @@ void CheckClock(void)
 	SIM->CHIPCTL |= (1u<<11);     /* Enable CLKOUT */
 	
 	/* Set PIN5 PORTB Output CLK */
+	SETBIT(PCC->PCC_PORTB,0x1u,30); /* Enable clock port B */
+	
 	CLEARBIT(PORTB->PCR[PIN5],7u,8u); /* Clear ALL MUX */
   CLEARBIT(PORTB->PCR[PIN5],3u,0u); /* Clear PULL */
 

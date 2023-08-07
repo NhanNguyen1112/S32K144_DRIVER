@@ -1,83 +1,83 @@
 Dependencies for Project 'S32K144_DRIVER', Target 'Target 1': (DO NOT MODIFY !)
 CompilerVersion: 6190000::V6.19::ARMCLANG
-F (.\main.c)(0x64C8CE0D)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/S32K144HAxxxLLx-I./RTE/_Target_1-IC:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices/common-D__UVISION_VERSION="538" -D_RTE_ -DCPU_S32K144HFT0VLLT -D_RTE_-o ./objects/main.o -MD)
-I (S32K144.h)(0x64C8B8BA)
+F (.\main.c)(0x64CA3510)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/S32K144HAxxxLLx-I./RTE/_Target_1-IC:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices/common-D__UVISION_VERSION="538" -D_RTE_ -DCPU_S32K144HFT0VLLT -D_RTE_-o ./objects/main.o -MD)
+I (S32K144.h)(0x64C9DA3A)
 I (S32K144_LED.h)(0x64AE9C5C)
 I (S32K144_BUTTON.h)(0x64BF34FE)
 I (S32K144_INTERRUPT.h)(0x64B12DEA)
 I (SYSTICK.h)(0x64BF3AB2)
 I (Gpio.h)(0x64C36616)
-I (Clock.h)(0x64C8C110)
+I (Clock.h)(0x64C9BBD6)
 I (Softtimer.h)(0x64C8A72E)
-F (.\S32K144.h)(0x64C8B8BA)()
-F (.\S32K144_LED.c)(0x64AFA096)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/S32K144HAxxxLLx-I./RTE/_Target_1-IC:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices/common-D__UVISION_VERSION="538" -D_RTE_ -DCPU_S32K144HFT0VLLT -D_RTE_-o ./objects/s32k144_led.o -MD)
+F (.\S32K144.h)(0x64C9DA3A)()
+F (.\S32K144_LED.c)(0x64C9CA1F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/S32K144HAxxxLLx-I./RTE/_Target_1-IC:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices/common-D__UVISION_VERSION="538" -D_RTE_ -DCPU_S32K144HFT0VLLT -D_RTE_-o ./objects/s32k144_led.o -MD)
 I (S32K144_LED.h)(0x64AE9C5C)
-I (S32K144.h)(0x64C8B8BA)
+I (S32K144.h)(0x64C9DA3A)
 I (S32K144_BUTTON.h)(0x64BF34FE)
 I (S32K144_INTERRUPT.h)(0x64B12DEA)
 I (SYSTICK.h)(0x64BF3AB2)
 I (Gpio.h)(0x64C36616)
-I (Clock.h)(0x64C8C110)
+I (Clock.h)(0x64C9BBD6)
 I (Softtimer.h)(0x64C8A72E)
 F (.\S32K144_LED.h)(0x64AE9C5C)()
-F (.\S32K144_BUTTON.c)(0x64AFA092)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/S32K144HAxxxLLx-I./RTE/_Target_1-IC:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices/common-D__UVISION_VERSION="538" -D_RTE_ -DCPU_S32K144HFT0VLLT -D_RTE_-o ./objects/s32k144_button.o -MD)
+F (.\S32K144_BUTTON.c)(0x64C9CA74)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/S32K144HAxxxLLx-I./RTE/_Target_1-IC:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices/common-D__UVISION_VERSION="538" -D_RTE_ -DCPU_S32K144HFT0VLLT -D_RTE_-o ./objects/s32k144_button.o -MD)
 I (S32K144_BUTTON.h)(0x64BF34FE)
-I (S32K144.h)(0x64C8B8BA)
+I (S32K144.h)(0x64C9DA3A)
 I (S32K144_LED.h)(0x64AE9C5C)
 I (S32K144_INTERRUPT.h)(0x64B12DEA)
 I (SYSTICK.h)(0x64BF3AB2)
 I (Gpio.h)(0x64C36616)
-I (Clock.h)(0x64C8C110)
+I (Clock.h)(0x64C9BBD6)
 I (Softtimer.h)(0x64C8A72E)
 F (.\S32K144_BUTTON.h)(0x64BF34FE)()
-F (.\S32K144_INTERRUPT.c)(0x64BF3526)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/S32K144HAxxxLLx-I./RTE/_Target_1-IC:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices/common-D__UVISION_VERSION="538" -D_RTE_ -DCPU_S32K144HFT0VLLT -D_RTE_-o ./objects/s32k144_interrupt.o -MD)
+F (.\S32K144_INTERRUPT.c)(0x64C9C997)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/S32K144HAxxxLLx-I./RTE/_Target_1-IC:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices/common-D__UVISION_VERSION="538" -D_RTE_ -DCPU_S32K144HFT0VLLT -D_RTE_-o ./objects/s32k144_interrupt.o -MD)
 I (S32K144_INTERRUPT.h)(0x64B12DEA)
-I (S32K144.h)(0x64C8B8BA)
+I (S32K144.h)(0x64C9DA3A)
 I (S32K144_LED.h)(0x64AE9C5C)
 I (S32K144_BUTTON.h)(0x64BF34FE)
 I (SYSTICK.h)(0x64BF3AB2)
 I (Gpio.h)(0x64C36616)
-I (Clock.h)(0x64C8C110)
+I (Clock.h)(0x64C9BBD6)
 I (Softtimer.h)(0x64C8A72E)
 F (.\S32K144_INTERRUPT.h)(0x64B12DEA)()
 F (.\SYSTICK.c)(0x64BF3AA6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/S32K144HAxxxLLx-I./RTE/_Target_1-IC:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices/common-D__UVISION_VERSION="538" -D_RTE_ -DCPU_S32K144HFT0VLLT -D_RTE_-o ./objects/systick.o -MD)
 I (SYSTICK.h)(0x64BF3AB2)
-I (S32K144.h)(0x64C8B8BA)
+I (S32K144.h)(0x64C9DA3A)
 I (S32K144_LED.h)(0x64AE9C5C)
 I (S32K144_BUTTON.h)(0x64BF34FE)
 I (S32K144_INTERRUPT.h)(0x64B12DEA)
 I (Gpio.h)(0x64C36616)
-I (Clock.h)(0x64C8C110)
+I (Clock.h)(0x64C9BBD6)
 I (Softtimer.h)(0x64C8A72E)
 F (.\SYSTICK.h)(0x64BF3AB2)()
 F (.\Softtimer.c)(0x64C36FE8)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/S32K144HAxxxLLx-I./RTE/_Target_1-IC:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices/common-D__UVISION_VERSION="538" -D_RTE_ -DCPU_S32K144HFT0VLLT -D_RTE_-o ./objects/softtimer.o -MD)
 I (Softtimer.h)(0x64C8A72E)
-I (S32K144.h)(0x64C8B8BA)
+I (S32K144.h)(0x64C9DA3A)
 I (S32K144_LED.h)(0x64AE9C5C)
 I (S32K144_BUTTON.h)(0x64BF34FE)
 I (S32K144_INTERRUPT.h)(0x64B12DEA)
 I (SYSTICK.h)(0x64BF3AB2)
 I (Gpio.h)(0x64C36616)
-I (Clock.h)(0x64C8C110)
+I (Clock.h)(0x64C9BBD6)
 F (.\Softtimer.h)(0x64C8A72E)()
-F (.\Clock.c)(0x64C8D076)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/S32K144HAxxxLLx-I./RTE/_Target_1-IC:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices/common-D__UVISION_VERSION="538" -D_RTE_ -DCPU_S32K144HFT0VLLT -D_RTE_-o ./objects/clock.o -MD)
-I (Clock.h)(0x64C8C110)
-I (S32K144.h)(0x64C8B8BA)
+F (.\Clock.c)(0x64CA3A4E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/S32K144HAxxxLLx-I./RTE/_Target_1-IC:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices/common-D__UVISION_VERSION="538" -D_RTE_ -DCPU_S32K144HFT0VLLT -D_RTE_-o ./objects/clock.o -MD)
+I (Clock.h)(0x64C9BBD6)
+I (S32K144.h)(0x64C9DA3A)
 I (S32K144_LED.h)(0x64AE9C5C)
 I (S32K144_BUTTON.h)(0x64BF34FE)
 I (S32K144_INTERRUPT.h)(0x64B12DEA)
 I (SYSTICK.h)(0x64BF3AB2)
 I (Gpio.h)(0x64C36616)
 I (Softtimer.h)(0x64C8A72E)
-F (.\Clock.h)(0x64C8C110)()
+F (.\Clock.h)(0x64C9BBD6)()
 F (.\Gpio.c)(0x64C36ED4)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/S32K144HAxxxLLx-I./RTE/_Target_1-IC:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices/common-D__UVISION_VERSION="538" -D_RTE_ -DCPU_S32K144HFT0VLLT -D_RTE_-o ./objects/gpio.o -MD)
 I (Gpio.h)(0x64C36616)
-I (S32K144.h)(0x64C8B8BA)
+I (S32K144.h)(0x64C9DA3A)
 I (S32K144_LED.h)(0x64AE9C5C)
 I (S32K144_BUTTON.h)(0x64BF34FE)
 I (S32K144_INTERRUPT.h)(0x64B12DEA)
 I (SYSTICK.h)(0x64BF3AB2)
-I (Clock.h)(0x64C8C110)
+I (Clock.h)(0x64C9BBD6)
 I (Softtimer.h)(0x64C8A72E)
 F (.\Gpio.h)(0x64C36616)()
 F (C:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices/startup.c)(0x60DEABDE)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/S32K144HAxxxLLx-I./RTE/_Target_1-IC:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices-IC:/Users/Dell/AppData/Local/Arm/Packs/Keil/S32_SDK_DFP/1.5.0/platform/devices/common-D__UVISION_VERSION="538" -D_RTE_ -DCPU_S32K144HFT0VLLT -D_RTE_-o ./objects/startup.o -MD)

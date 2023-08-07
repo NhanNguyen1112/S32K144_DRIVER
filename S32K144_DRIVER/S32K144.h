@@ -147,22 +147,28 @@ typedef struct
 {
 	volatile uint32_t VERID;
 	volatile uint32_t PARAM;
+	char dummy0[8u];
 	volatile uint32_t CSR;
 	volatile uint32_t RCCR;
 	volatile uint32_t VCCR;
 	volatile uint32_t HCCR;
 	volatile uint32_t CLKOUTCNFG;
+	char dummy2[220u];
+
 	volatile uint32_t SOSCCSR;
 	volatile uint32_t SOSCDIV;
 	volatile uint32_t SOSCCFG;
-	
+	char dummy3[244u];
+
 	volatile uint32_t SIRCCSR;
 	volatile uint32_t SIRCDIV;
 	volatile uint32_t SIRCCFG;
+	char dummy4[244u];
 
 	volatile uint32_t FIRCCSR;
 	volatile uint32_t FIRCDIV;
 	volatile uint32_t FIRCCFG;
+	char dummy5[756u];
 
 	volatile uint32_t SPLLCSR;
 	volatile uint32_t SPLLDIV;

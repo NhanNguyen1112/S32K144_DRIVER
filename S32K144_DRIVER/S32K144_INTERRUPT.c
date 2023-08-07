@@ -10,21 +10,21 @@ void INIT_Interrupt(void)
 	NVIC->ISER[1] |= (1u<<29u);
 	
 	/* Config interrupt for button 1, 2 */
-	PORTC_PCR12 |= (0x9u<<16);
-	PORTC_PCR13 |= (0x9u<<16);
+	PORTC->PCR[BUTTON_1] |= (0x9u<<16);
+	PORTC->PCR[BUTTON_2] |= (0x9u<<16);
 }
 
 void PORTC_IRQHandler(void)
 {
-	if(READBIT(PORTC_PCR12,24))
+	if(READBIT(PORTC->PCR[BUTTON_1],24))
 	{
-		SETBIT(PORTC_PCR12,1,24);
+		SETBIT(PORTC->PCR[BUTTON_1],1,24);
 		StateLED = 1;
 	}
 	
-	if(READBIT(PORTC_PCR13,24))
+	if(READBIT(PORTC->PCR[BUTTON_2],24))
 	{
-		SETBIT(PORTC_PCR13,1,24);
+		SETBIT(PORTC->PCR[BUTTON_2],1,24);
 		StateLED = 0;
 	}
 }

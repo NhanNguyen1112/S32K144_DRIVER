@@ -17,12 +17,9 @@ void Function_LedBlue(void)
 
 int main(void)
 {
-	//Slow_IRC_Clock();
-	//Run_Mode_Clock();
-	
-	EnableClockPortD(Enable);
-	EnableClockPortC(Enable);
-	EnableClockPortB(Enable);
+	SOSC_Init();
+	SPLL_Init();
+	Run_Mode_Clock();
 	
 	CheckClock();
 

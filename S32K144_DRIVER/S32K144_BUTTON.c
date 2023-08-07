@@ -22,12 +22,12 @@ void BUTTON_INIT(void)
 	CLOCK_PORTC_INIT();
 	
 	/* Set MUX */
-	PORTC_PCR12 |= (0x01u<<8);
-	PORTC_PCR13 |= (0x01u<<8);
+	PORTC->PCR[BUTTON_1] |= (0x01u<<8);
+	PORTC->PCR[BUTTON_2] |= (0x01u<<8);
 	
 	/* Disable PULL */
-	PORTC_PCR12 &= ~(1u<<1);
-	PORTC_PCR13 &= ~(1u<<1);
+	PORTC->PCR[BUTTON_1] &= ~(1u<<1);
+	PORTC->PCR[BUTTON_2] &= ~(1u<<1);
 	
 	/*Set INPUT*/
 	CLEARBIT(GPIOC->PDDR,1u,BUTTON_1);
