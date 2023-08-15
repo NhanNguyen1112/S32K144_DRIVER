@@ -9,6 +9,8 @@
 ".\objects\gpio.o"
 ".\objects\nvic.o"
 ".\objects\lpit.o"
+".\objects\uart.o"
+".\objects\spi.o"
 ".\objects\startup.o"
 ".\objects\startup_s32k144.o"
 ".\objects\system_s32k144.o"

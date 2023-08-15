@@ -9,17 +9,11 @@
 	* PTC13             | GPIO [BUTTON2]
 	*/
 
-/* Enable clock for PORT C*/
-void CLOCK_PORTC_INIT(void)
-{
-	SETBIT(PCC->PCC_PORTC,0x1u,30);
-}
-
 /* INIT button 12, 13 */
 void BUTTON_INIT(void)
 {
 	/* Enable Clock*/
-	CLOCK_PORTC_INIT();
+	EnableClockPortC(Enable);
 	
 	/* Set MUX */
 	PORTC->PCR[BUTTON_1] |= (0x01u<<8);

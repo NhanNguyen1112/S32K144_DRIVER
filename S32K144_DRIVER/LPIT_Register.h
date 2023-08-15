@@ -17,7 +17,7 @@ typedef struct
 	volatile unsigned int MIER;
 	volatile unsigned int SETTEN;
 	volatile unsigned int CLRTEN;
-	
+	unsigned int dummy;
 	volatile unsigned int TVAL0;
 	volatile unsigned int CVAL0;
 	volatile unsigned int TCTRL0;
@@ -35,8 +35,8 @@ typedef struct
 	volatile unsigned int TCTRL3;
 }LPIT_typdef;
 
-#define LPIT_BASE_ADDRESS 	((uint32_t)0x40037000u)
-#define LPIT								((LPIT_typdef*)SYSTICK_BASE_ADDRESS)
+#define LPIT_BASE_ADDRESS 	((unsigned int)0x40037000u)
+#define LPIT				((LPIT_typdef*)LPIT_BASE_ADDRESS)
 
 /*===============================================================================*/
 

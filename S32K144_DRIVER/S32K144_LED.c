@@ -15,17 +15,11 @@ static void delay(void)
 	for(int i=0;i<=600000;i++);
 }
 
-/* Config clock for PORT D */
-void CLOCK_PORTD_INIT(void)
-{
-	SETBIT(PCC->PCC_PORTD,0x1u,30);
-}
-
 /* Init Led 0, 15, 16 of PORT D */
 void LED_INIT(void)
 {
 	/* Enable Clock*/
-	CLOCK_PORTD_INIT();
+	EnableClockPortD(Enable);
 	
 	/* Set MUX */
 	PORTD->PCR[LEDBLUE] 	|= (0x01u<<8); /*BLUE*/

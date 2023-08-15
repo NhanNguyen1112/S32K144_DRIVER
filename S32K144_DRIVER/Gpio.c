@@ -14,7 +14,7 @@ static void SetPortGpio(volatile unsigned int *Register, const unsigned char Pul
   }
   else if(Pull==PullDown)
   {
-    SETBIT(*Register,2u,0u); /* Set PullUp */
+    SETBIT(*Register,2u,0u); /* Set PullDown */
   } else {}
 }
 

@@ -17,11 +17,19 @@ void Function_LedBlue(void)
 
 int main(void)
 {
-	SOSC_Init_8Mhz();
-	SPLL_Init();
-	Run_Mode_Clock();
+	SPI0_MAIN_TEST();
+
+	// Systick_MAIN_Delay_Test();
+
+	//UART0_MAIN_TEST();
 	
-	CheckClock();
+	//MainLPIT_Test();
+	
+	// SOSC_Init_8Mhz();
+	// SPLL_Init();
+	// Run_Mode_Clock();
+	
+	// CheckClock();
 
 	// SetPinInput(PortC,BUTTON_1,PullDown);
 	// SetPinInput(PortC,BUTTON_2,PullDown);
@@ -39,8 +47,8 @@ int main(void)
 	// Softtimer_StartTimer(1,50,CONTINUE,&Function_LedGreen);
 	// Softtimer_StartTimer(2,5,CONTINUE,&Function_LedBlue);
 
-	while(1)
-	{
+	// while(1)
+	// {
 		// Softtimer_MainFunction();
 
 		// if(GetPin(PortC,BUTTON_1))
@@ -60,6 +68,6 @@ int main(void)
 		TogglePin(PortD,LEDRED);
 		SysTickDelay(1000);
 		*/
-	}
+	//}
 }
 

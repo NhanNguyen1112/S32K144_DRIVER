@@ -3,6 +3,7 @@
 #define __Gpio__
 
 #include "S32K144.h"
+#include "Gpio_Register.h"
 
 void SetPinInput(const unsigned char Port, const unsigned char Pin, const unsigned char Pull);
 void SetPinOutput(const unsigned char Port, const unsigned char Pin, const unsigned char Pull);
